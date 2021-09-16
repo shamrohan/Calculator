@@ -1,0 +1,87 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="Calculator.css">
+</head>
+
+<body>
+    <form name="form1">
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text" value="" name="inputbox" id="inputbox">
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="1" onclick="addNumber('1',form1.inputbox)">
+            </td>
+            <td>
+                <input type="button" value="2" onclick="addNumber('2',form1.inputbox)">
+            </td>
+            <td>
+                <input type="button" value="3" onclick="addNumber('3',form1.inputbox)">
+            </td>
+            <td>
+                <input type="button" value="C" onclick="clearTextbox(form1.inputbox)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="4" onclick="addNumber('4',form1.inputbox)">
+            </td>
+            <td>
+                <input type="button" value="5" onclick="addNumber('5',form1.inputbox)">
+            </td>
+            <td>
+                <input type="button" value="6" onclick="addNumber('6',form1.inputbox)">
+            </td>
+            <td>
+                <input type="button" value="." onclick="decimal(form1.inputbox)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <input type="button" value="7" onclick="addNumber('7',form1.inputbox)">
+            </td>
+            <td>
+                <input type="button" value="8" onclick="addNumber('8',form1.inputbox)">
+            </td>
+            <td>
+                <input type="button" value="9" onclick="addNumber('9',form1.inputbox)">
+            </td>
+            <td>
+                <input type="button" value="-" onclick="subract(form1.inputbox)"> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="+" onclick="add(form1.inputbox)" >
+            </td>
+            <td>
+                <input type="button" value="0" onclick="addNumber('0',form1.inputbox)">
+            </td>
+            <td>
+                <input type="button" value="x" onclick="multiply(form1.inputbox)" >
+            </td>
+            <td>
+                <input type="button" value="÷" onclick="divide(form1.inputbox)"> 
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="%" onclick="percent(form1.inputbox)">
+            </td>
+            <td>
+                <input type="button" value="=" onclick="calc(form1.inputbox)">
+            </td>
+        </tr>
+
+    </table>
+</form>
+    <script src="Calculator.js"> </script>
+</body>
+
+</html>
