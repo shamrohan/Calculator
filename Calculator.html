@@ -1,11 +1,12 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="Calculator.css">
 </head>
 
 <body>
     <form name="form1">
+        <fieldset>
+            <legend> <example>Calculator</example></legend>
     <table>
         <tr>
             <td colspan="4">
@@ -80,8 +81,133 @@
         </tr>
 
     </table>
+</fieldset>
 </form>
-    <script src="Calculator.js"> </script>
+<style> 
+table {
+    background-color: rgb(0, 0, 0);
+}
+
+input {
+    font-family: sans-serif;
+    font-size: xx-large;
+    height: 80px;
+    width: 100px;
+    color: rgb(255, 0, 0);
+}
+
+#inputbox {
+    width: 410px;
+}
+
+legend {
+    font-family: cursive;
+    font-size: x-large;
+    color: rgb(60, 112, 255);
+    text-shadow: 1px 1px 2px #0772ff;
+}
+
+
+fieldset {
+    width: 410px;
+    box-shadow: 5px 6px 8px #000000;
+}
+</style>
+    <script> function addNumber(i, textbox) {
+        if (operend1) {
+            let temp = parseFloat(textbox.value)
+            if (operation) {
+                textbox.value = i
+                operation = false
+            }
+            else {
+                textbox.value += i
+            }
+        }
+        else {
+            textbox.value += i
+        }
+    }
+    function clearTextbox(textbox) {
+        textbox.value = ""
+        operation = false
+        operend1 = undefined
+    }
+    
+    let operend1 = undefined
+    let operation = false
+    let operator = undefined
+    function add(textbox) {
+        operation = true
+        operator = "+"
+        if (operend1) {
+            operend1 = textbox.value = parseFloat(textbox.value) + operend1
+        }
+        else {
+            operend1 = parseFloat(textbox.value)
+    
+        }
+    }
+    function calc(textbox) {
+        if (operator === '+') {
+            textbox.value = operend1 + parseFloat(textbox.value)
+        }
+        if (operator === 'x') {
+            textbox.value = operend1 * parseFloat(textbox.value)
+        }
+        if (operator === '-') {
+            textbox.value = operend1 - parseFloat(textbox.value)
+        }
+        if (operator === '/') {
+            textbox.value = operend1 / parseFloat(textbox.value)
+        }
+    }
+    
+    function multiply(textbox) {
+        operation = true
+        operator = "x"
+        if (operend1) {
+            operend1 = textbox.value = parseFloat(textbox.value) * operend1
+        }
+        else {
+            operend1 = parseFloat(textbox.value)
+    
+        }
+    }
+    function subract(textbox) {
+        operation = true
+        operator = "-"
+        if (operend1) {
+            operend1 = textbox.value = parseFloat(textbox.value) - operend1
+        }
+        else {
+            operend1 = parseFloat(textbox.value)
+    
+        }
+    }
+    function divide(textbox) {
+        operation = true
+        operator = "/"
+        if (operend1) {
+            operend1 = textbox.value = parseFloat(textbox.value) / operend1
+        }
+        else {
+            operend1 = parseFloat(textbox.value)
+    
+        }
+    }
+    function percent(textbox) {
+    
+        textbox.value = parseFloat(textbox.value) * .01
+    }
+    function decimal(textbox) {
+       if(!textbox.value.includes(".")){
+           addNumber(".",textbox)
+       }
+       
+    
+    } </script>
+
 </body>
 
 </html>
